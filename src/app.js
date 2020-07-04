@@ -27,6 +27,8 @@ class App {
             express.static(path.resolve(__dirname, '..','uploads'))
         )
 
+        this.server.use(express.static('public'))
+
         this.server.use(express.json());
     }
 

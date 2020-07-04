@@ -7,6 +7,8 @@ import SessionController from './controllers/SessionController';
 import HouseController from './controllers/HouseController';
 import DashboardController from './controllers/DashboardController';
 import ReserveController from './controllers/ReserveController';
+//import PdfController from './controllers/PdfController';
+import PdfController from './pdf/PdfController';
 
 
 const routes = new Router();
@@ -24,6 +26,8 @@ routes.get('/dashboard', DashboardController.show);
 routes.post('/houses/:house_id/reserve', ReserveController.store);
 routes.get('/reserves', ReserveController.index);
 routes.delete('/reserves/cancel', ReserveController.destroy);
+
+routes.post('/pdf', PdfController.gerar);
 
 //module.exports = routes;
 export default routes;
